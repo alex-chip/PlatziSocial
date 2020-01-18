@@ -1,6 +1,7 @@
+
 exports.success = function (req, res, message, status) {
   let statusCode = status || 200
-  let  statusMessage = message || ''
+  let statusMessage = message || ''
   res.status(statusCode)
     .send({
       error: false,
