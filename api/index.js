@@ -1,6 +1,7 @@
 const express = require('express')
 const config = require('../config.js')
 const user = require('./components/user/network')
+const auth = require('./components/auth/network')
 
 const swaggerUi = require('swagger-ui-express')
 const swaggerDoc = require('./swagger.json')
@@ -13,6 +14,7 @@ app
 // Routes
 app
   .use('/api/user', user)
+  .use('/api/auth', auth)
 
 // documentacion con swagger
 app
