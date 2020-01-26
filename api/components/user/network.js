@@ -1,4 +1,7 @@
 const { Router } = require('express')
+
+// importando el archivo secure 
+const secure = require('./secure')
 const response = require('../../../network/response')
 const Controller = require('./index')
 const router = Router()
@@ -8,7 +11,7 @@ router
   .get('/', list)
   .get('/:id', get)
   .post('/', upsert)
-  .put('/', upsert)
+  .put('/', secure('update'), upsert)
 
 function list (req, res) {
   Controller.list()
